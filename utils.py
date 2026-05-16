@@ -17,10 +17,14 @@ def save_books(books):
 def add_book(books):
     author = input("Автор: ")
     title = input("Название: ")
+
+    # Проверка на дубликаты
     for book in books:
         if book['author'] == author and book['title'] == title:
             print("Эта книга уже есть в списке!")
             return
+
+    # Ввод и валидация оценки
     while True:
         try:
             rating = int(input("Оценка (1-5): "))
@@ -30,6 +34,7 @@ def add_book(books):
                 print("Введите число от 1 до 5")
         except ValueError:
             print("Некорректный ввод")
+
     date = datetime.now().strftime("%d.%m.%Y")
     books.append({
         "author": author,
@@ -39,7 +44,7 @@ def add_book(books):
     })
     save_books(books)
     print("Книга добавлена!")
-
+    
 def show_books(books):
     if not books:
         print("Список пуст")
