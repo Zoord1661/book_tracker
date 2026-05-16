@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from utils import *
 
 def main():
@@ -27,5 +28,5 @@ def main():
         else:
             print("Неверный выбор")
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
